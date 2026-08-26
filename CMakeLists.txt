@@ -4,7 +4,7 @@
 cmake_minimum_required(VERSION 3.21)
 
 project(LinDiskInfo
-    VERSION 1.0.1
+    VERSION 1.0.2
     LANGUAGES CXX
 )
 
@@ -17,7 +17,7 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 find_package(
     Qt6
     REQUIRED
-    COMPONENTS Widgets
+    COMPONENTS Widgets Network
 )
 
 qt_standard_project_setup()
@@ -48,6 +48,7 @@ target_link_libraries(
     lindiskinfo
     PRIVATE
         Qt6::Widgets
+        Qt6::Network
 )
 
 install(

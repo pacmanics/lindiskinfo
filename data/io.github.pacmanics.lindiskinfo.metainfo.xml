@@ -55,6 +55,11 @@ SPDX-License-Identifier: CC0-1.0
   <content_rating type="oars-1.1"/>
 
   <releases>
+    <release version="1.0.2" date="2026-08-26">
+      <description>
+        <p>Prevent duplicate instances and improve system tray icon reliability.</p>
+      </description>
+    </release>
     <release version="1.0.1" date="2026-08-26">
       <description>
         <p>Fix KDE Plasma application-menu icon resolution.</p>

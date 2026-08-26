@@ -6367,12 +6367,7 @@ void MainWindow::setupTrayIcon()
     );
 
     m_trayIcon->setIcon(
-        QIcon::fromTheme(
-            QStringLiteral(
-                "lindiskinfo"
-            ),
-            qApp->windowIcon()
-        )
+        qApp->windowIcon()
     );
 
     m_trayIcon->setToolTip(
@@ -6986,12 +6981,7 @@ void MainWindow::updateTrayPresentation()
 
     } else {
         icon =
-            QIcon::fromTheme(
-                QStringLiteral(
-                    "lindiskinfo"
-                ),
-                qApp->windowIcon()
-            );
+            qApp->windowIcon();
     }
 
 
