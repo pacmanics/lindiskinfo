@@ -55,6 +55,11 @@ SPDX-License-Identifier: CC0-1.0
   <content_rating type="oars-1.1"/>
 
   <releases>
+    <release version="1.0.1" date="2026-08-26">
+      <description>
+        <p>Fix KDE Plasma application-menu icon resolution.</p>
+      </description>
+    </release>
     <release version="1.0.0" date="2026-08-26">
       <description>
         <p>Initial public release.</p>

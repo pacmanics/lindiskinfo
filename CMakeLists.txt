@@ -4,7 +4,7 @@
 cmake_minimum_required(VERSION 3.21)
 
 project(LinDiskInfo
-    VERSION 1.0.0
+    VERSION 1.0.1
     LANGUAGES CXX
 )
 
@@ -56,9 +56,15 @@ install(
         ${CMAKE_INSTALL_BINDIR}
 )
 
+configure_file(
+    data/lindiskinfo.desktop.in
+    ${CMAKE_CURRENT_BINARY_DIR}/lindiskinfo.desktop
+    @ONLY
+)
+
 install(
     FILES
-        data/lindiskinfo.desktop
+        ${CMAKE_CURRENT_BINARY_DIR}/lindiskinfo.desktop
     DESTINATION
         ${CMAKE_INSTALL_DATADIR}/applications
 )
