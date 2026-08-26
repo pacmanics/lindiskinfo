@@ -1,0 +1,7 @@
+/build/
+/build-*/
+/.cache/
+/.backup-*/
+*.log
+*.user
+*.autosave

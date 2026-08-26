@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+SPDX-FileCopyrightText: 2026 PacmanicS
+SPDX-License-Identifier: CC0-1.0
+-->
+<component type="desktop-application">
+  <id>io.github.pacmanics.lindiskinfo</id>
+
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+
+  <name>LinDiskInfo</name>
+  <summary>Monitor S.M.A.R.T. and NVMe drive health on Linux</summary>
+  <summary xml:lang="de">S.M.A.R.T.- und NVMe-Laufwerkszustand unter Linux überwachen</summary>
+
+  <description>
+    <p>
+      LinDiskInfo is a Qt-based disk health monitor for Linux with support for
+      S.M.A.R.T., NVMe health data, temperatures, drive statistics, self-tests,
+      logs and local history.
+    </p>
+    <p xml:lang="de">
+      LinDiskInfo ist ein Qt-basierter Datenträger-Zustandsmonitor für Linux
+      mit Unterstützung für S.M.A.R.T., NVMe-Zustandsdaten, Temperaturen,
+      Laufwerksstatistiken, Selbsttests, Protokolle und lokalen Verlauf.
+    </p>
+    <p>
+      It provides a clean interface inspired by CrystalDiskInfo while remaining
+      an independent Linux application.
+    </p>
+    <p xml:lang="de">
+      Die übersichtliche Benutzeroberfläche ist von CrystalDiskInfo inspiriert,
+      LinDiskInfo bleibt jedoch eine unabhängige Linux-Anwendung.
+    </p>
+  </description>
+
+  <developer id="com.pacmanics">
+    <name>PacmanicS</name>
+  </developer>
+
+  <launchable type="desktop-id">lindiskinfo.desktop</launchable>
+
+  <provides>
+    <binary>lindiskinfo</binary>
+  </provides>
+
+  <categories>
+    <category>System</category>
+    <category>Utility</category>
+  </categories>
+
+  <url type="homepage">https://pacmanics.com</url>
+  <url type="vcs-browser">https://github.com/pacmanics/lindiskinfo</url>
+
+  <content_rating type="oars-1.1"/>
+
+  <releases>
+    <release version="1.0.0" date="2026-08-26">
+      <description>
+        <p>Initial public release.</p>
+      </description>
+    </release>
+  </releases>
+</component>

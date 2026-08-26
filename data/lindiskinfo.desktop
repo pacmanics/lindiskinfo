@@ -1,0 +1,17 @@
+# SPDX-FileCopyrightText: 2026 PacmanicS
+# SPDX-License-Identifier: GPL-3.0-or-later
+
+[Desktop Entry]
+Type=Application
+Name=LinDiskInfo
+GenericName=Disk Health Monitor
+GenericName[de]=Datenträger-Zustandsmonitor
+Comment=S.M.A.R.T. and NVMe health monitor for Linux
+Comment[de]=S.M.A.R.T.- und NVMe-Zustandsmonitor für Linux
+Exec=lindiskinfo
+Icon=lindiskinfo
+Terminal=false
+Categories=System;Utility;
+Keywords=SMART;NVMe;SSD;HDD;disk;health;
+Keywords[de]=SMART;NVMe;SSD;HDD;Festplatte;Datenträger;Zustand;
+StartupNotify=true
