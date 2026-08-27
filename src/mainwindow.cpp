@@ -76,6 +76,24 @@ constexpr int ColumnWorst = 5;
 constexpr int ColumnThreshold = 6;
 constexpr int ColumnRaw = 7;
 
+
+QStringList blockDeviceSnapshot()
+{
+    QDir directory(
+        QStringLiteral(
+            "/sys/class/block"
+        )
+    );
+
+    return directory.entryList(
+        QDir::AllEntries |
+        QDir::System |
+        QDir::NoDotAndDotDot,
+        QDir::Name
+    );
+}
+
+
 QString protocolName(
     const DriveInfo &drive,
     const QJsonObject &data
@@ -2820,6 +2838,99 @@ void MainWindow::buildMenus()
             m_liveDetectionDebounce->start();
         }
     );
+
+
+    // ========================================================
+    // Reliable live block-device detection fallback
+    //
+    // QFileSystemWatcher remains the fast event-driven path.
+    // This timer compares only the names in /sys/class/block,
+    // so it is cheap and independent of desktop automounting.
+    // ========================================================
+
+    QTimer *liveDevicePollTimer =
+        new QTimer(this);
+
+    liveDevicePollTimer->setInterval(
+        750
+    );
+
+    liveDevicePollTimer->setProperty(
+        "blockDeviceSnapshot",
+        blockDeviceSnapshot()
+    );
+
+    connect(
+        liveDevicePollTimer,
+        &QTimer::timeout,
+        this,
+        [this, liveDevicePollTimer]
+        {
+            if (!m_liveDetectionAction ||
+                !m_liveDetectionAction
+                    ->isChecked()) {
+                return;
+            }
+
+            const QStringList currentSnapshot =
+                blockDeviceSnapshot();
+
+            const QStringList previousSnapshot =
+                liveDevicePollTimer
+                    ->property(
+                        "blockDeviceSnapshot"
+                    )
+                    .toStringList();
+
+            if (currentSnapshot ==
+                previousSnapshot) {
+                return;
+            }
+
+            liveDevicePollTimer->setProperty(
+                "blockDeviceSnapshot",
+                currentSnapshot
+            );
+
+            // Existing debounce handles device settling and
+            // coalesces disk/partition changes into one rescan.
+            m_liveDetectionDebounce->start();
+        }
+    );
+
+    connect(
+        m_liveDetectionAction,
+        &QAction::toggled,
+        this,
+        [this, liveDevicePollTimer](
+            bool enabled
+        )
+        {
+            liveDevicePollTimer->setProperty(
+                "blockDeviceSnapshot",
+                blockDeviceSnapshot()
+            );
+
+            if (enabled) {
+                liveDevicePollTimer->start();
+
+                // Enabling live detection should immediately
+                // synchronize devices that may have changed
+                // while detection was disabled.
+                m_liveDetectionDebounce->start();
+
+            } else {
+                liveDevicePollTimer->stop();
+            }
+        }
+    );
+
+    if (m_liveDetectionAction &&
+        m_liveDetectionAction->isChecked()) {
+
+        liveDevicePollTimer->start();
+    }
+
 
     connect(
         m_liveDetectionDebounce,
