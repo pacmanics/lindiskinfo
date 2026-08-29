@@ -129,7 +129,7 @@ int main(int argc, char *argv[])
     );
 
     QCoreApplication::setApplicationVersion(
-        QStringLiteral("1.0.3")
+        QStringLiteral("1.0.4")
     );
 
     QCoreApplication::setOrganizationName(

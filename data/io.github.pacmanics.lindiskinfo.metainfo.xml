@@ -55,6 +55,11 @@ SPDX-License-Identifier: CC0-1.0
   <content_rating type="oars-1.1"/>
 
   <releases>
+    <release version="1.0.4" date="2026-08-29">
+      <description>
+        <p>Add ten optional integrated themes, conservative SATA SSD remaining-life reporting, and themed layout improvements.</p>
+      </description>
+    </release>
     <release version="1.0.3" date="2026-08-27">
       <description>
         <p>Improve live detection of connected and removed block devices.</p>

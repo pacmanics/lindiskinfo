@@ -8,6 +8,7 @@ LinDiskInfo is an independent Linux project. It does not use CrystalDiskInfo sou
 
 - ATA and SATA S.M.A.R.T. information
 - NVMe health and lifetime statistics
+- Conservative SATA SSD remaining-life reporting when smartctl exposes a recognized lifetime metric
 - Temperature monitoring and configurable warning thresholds
 - S.M.A.R.T. attribute tables and multiple raw-value formats
 - NVMe PCIe transfer-mode information
@@ -19,7 +20,7 @@ LinDiskInfo is an independent Linux project. It does not use CrystalDiskInfo sou
 - System tray integration
 - Automatic device detection and refresh
 - English and German interface
-- System and dark themes
+- System and dark themes plus ten optional integrated character themes
 
 ## Runtime requirements
 

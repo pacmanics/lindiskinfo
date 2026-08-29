@@ -29,6 +29,8 @@ class QSystemTrayIcon;
 class QTableWidget;
 class QTimer;
 class QToolButton;
+class ThemeBackgroundWidget;
+class ResponsiveTableLayout;
 class QWidget;
 
 class MainWindow : public QMainWindow
@@ -66,6 +68,13 @@ private:
 
     void buildInterface();
     void buildMenus();
+    void setupAtaManagementMenus();
+    void setupControllerMenus();
+    void setupMaintenanceMenus();
+    void setupAdvancedMenuActions();
+    void setupAdvancedHealthAndValueActions();
+    void setupAdvancedSystemBehaviorActions();
+    void setupAdvancedDriveActions();
     void applyLanguage();
     void applyTheme();
 
@@ -346,6 +355,12 @@ private:
 
     QLabel *m_statusLabel = nullptr;
     QTableWidget *m_table = nullptr;
+
+    ThemeBackgroundWidget *m_themeBackground =
+        nullptr;
+
+    ResponsiveTableLayout *m_tableLayoutController =
+        nullptr;
 
     QMenu *m_fileMenu = nullptr;
     QMenu *m_editMenu = nullptr;

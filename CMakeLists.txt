@@ -4,7 +4,7 @@
 cmake_minimum_required(VERSION 3.21)
 
 project(LinDiskInfo
-    VERSION 1.0.3
+    VERSION 1.0.4
     LANGUAGES CXX
 )
 
@@ -27,6 +27,41 @@ qt_add_executable(
     src/main.cpp
     src/mainwindow.cpp
     src/mainwindow.h
+    src/device/mainwindowdevice.cpp
+    src/device/mainwindownvme.cpp
+    src/device/mainwindowata.cpp
+    src/device/atawear.cpp
+    src/device/atawear.h
+    src/device/mainwindowformat.cpp
+    src/ui/mainwindowtable.cpp
+    src/ui/smarttablecolumns.h
+    src/tray/mainwindowtray.cpp
+    src/drives/mainwindowdrives.cpp
+    src/maintenance/mainwindowmaintenance.cpp
+    src/settings/mainwindowsettings.cpp
+    src/theme/mainwindowtheme.cpp
+    src/ui/mainwindowinterface.cpp
+    src/ui/mainwindowmenus.cpp
+    src/ui/mainwindowatamenus.cpp
+    src/ui/mainwindowcontrollermenus.cpp
+    src/ui/mainwindowmaintenancemenus.cpp
+    src/ui/mainwindowadvancedmenus.cpp
+    src/ui/mainwindowadvancedhealth.cpp
+    src/ui/mainwindowadvancedsystem.cpp
+    src/ui/mainwindowadvanceddrive.cpp
+    src/ui/mainwindowlanguage.cpp
+    src/reports/mainwindowreports.cpp
+    src/history/mainwindowhistory.cpp
+    src/history/lindiskhistoryplot.cpp
+    src/history/lindiskhistoryplot.h
+    src/theme/waifuthemes.cpp
+    src/theme/waifuthemes.h
+    src/theme/themeassetstore.cpp
+    src/theme/themeassetstore.h
+    src/theme/themebackgroundwidget.cpp
+    src/theme/themebackgroundwidget.h
+    src/ui/responsivetablelayout.cpp
+    src/ui/responsivetablelayout.h
     src/smartctlbackend.cpp
     src/smartctlbackend.h
     src/privilegedhelper.cpp
@@ -43,6 +78,19 @@ qt_add_resources(
     FILES
         data/icons/hicolor/256x256/apps/lindiskinfo.png
 )
+
+
+qt_add_resources(
+    lindiskinfo
+    "lindiskinfo_asset_resources"
+    PREFIX
+        "/assets"
+    BASE
+        "${CMAKE_CURRENT_SOURCE_DIR}/data"
+    FILES
+        data/lindiskinfo-assets.bin
+)
+
 
 target_link_libraries(
     lindiskinfo
