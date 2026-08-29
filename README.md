@@ -24,16 +24,16 @@ LinDiskInfo is an independent Linux project. It does not use CrystalDiskInfo sou
 - System tray integration
 - Automatic device detection and refresh
 - English and German interface
-- System and dark themes plus ten optional integrated character themes
+- System and dark themes plus ten optional integrated waifu themes
 
-## Themes
+## Waifu Themes
 
-LinDiskInfo includes the system and dark themes as well as ten optional integrated character themes.
+LinDiskInfo includes ten optional integrated waifu themes alongside the regular system and dark themes.
 
 <p align="center">
-  <img src="screenshots/screenshot1.webp" alt="LinDiskInfo character theme 1" width="32%">
-  <img src="screenshots/screenshot2.webp" alt="LinDiskInfo character theme 2" width="32%">
-  <img src="screenshots/screenshot3.webp" alt="LinDiskInfo character theme 3" width="32%">
+  <img src="screenshots/screenshot1.webp" alt="LinDiskInfo waifu theme 1" width="32%">
+  <img src="screenshots/screenshot2.webp" alt="LinDiskInfo waifu theme 2" width="32%">
+  <img src="screenshots/screenshot3.webp" alt="LinDiskInfo waifu theme 3" width="32%">
 </p>
 
 ## Runtime requirements
