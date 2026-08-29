@@ -67,7 +67,7 @@ The LinDiskInfo graphical interface runs as the normal unprivileged user.
 
 When privileged S.M.A.R.T. access is required, LinDiskInfo starts a dedicated helper through pkexec. The helper uses a restricted JSON protocol and invokes /usr/bin/smartctl only with validated devices, device types and supported operations.
 
-The complete graphical application is never started as root.
+LinDiskInfo may request authentication at startup to access privileged S.M.A.R.T. data. Only the dedicated helper is elevated through pkexec. The graphical application itself continues to run as the normal user.
 
 ## Privacy
 
